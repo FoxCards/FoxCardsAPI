@@ -4,7 +4,7 @@ namespace App;
 
 class Cardset extends BaseModel
 {
-    protected $appends = ['words_count'];
+    protected $appends = ['words_count', 'locale'];
 
     public function words(){
         return $this->hasMany(\App\Word::class);
@@ -27,5 +27,9 @@ class Cardset extends BaseModel
         $word->cardset()->associate($this);
         $word->save();
         return $word;
+    }
+
+    public function getLocaleAttribute(){
+        return $this->language()->value('locale');
     }
 }
