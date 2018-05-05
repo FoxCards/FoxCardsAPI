@@ -5,6 +5,7 @@ namespace App\Translate;
 use \App\Translation;
 
 class YandexTranslateAPI {
+	
 	static function getTranslation($fromToLangs, $word){
 		$result = JSON_DECODE(file_get_contents(self::composeUrl($fromToLangs, $word)));
 		if($result && ($result->code === 200)){

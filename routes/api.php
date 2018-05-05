@@ -20,4 +20,4 @@ Route::middleware('api')->get('/cards/{cardset}', 'CardListController@cardset');
 Route::middleware('api')->post('/cards', 'CardListController@addCardset');
 Route::middleware('api')->post('/cards/{cardset}', 'CardListController@addWord');
 
-Route::middleware('api')->get('/translate', 'TranslateController@translate');
+Route::middleware('api')->post('/translate', 'TranslateController@translate');
