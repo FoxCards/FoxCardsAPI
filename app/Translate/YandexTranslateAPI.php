@@ -17,6 +17,7 @@ class YandexTranslateAPI {
 	static function composeUrl($fromToLangs, $word){
 		// TODO: Security cecks
 		$y_key = env('YANDEX_API_KEY');
+		$word = urlencode($word);
 		$url = "https://translate.yandex.net/api/v1.5/tr.json/translate?format=plain&key=$y_key&text=$word&lang=$fromToLangs";
 		return $url;
 	}
