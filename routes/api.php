@@ -21,3 +21,5 @@ Route::middleware('api')->post('/cards', 'CardListController@addCardset');
 Route::middleware('api')->post('/cards/{cardset}', 'CardListController@addWord');
 
 Route::middleware('api')->post('/translate', 'TranslateController@translate');
+
+Route::middleware('api')->post('/firstIn', 'MetricsController@firstIn');
